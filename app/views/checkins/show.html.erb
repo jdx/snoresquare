@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @checkin.post %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= link_to @checkin.address, "http://maps.google.com/?q=#{@checkin.location[0]},#{@checkin.location[1]}" %>
+</p>
+
+<p>
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=#{@checkin.location[0]},#{@checkin.location[1]}&zoom=14&size=400x400&sensor=false&visual_refresh=true&markers=color:blue%7Clabel:S%7C#{@checkin.location[0]},#{@checkin.location[1]}" %>
+</p>
+
+<%= link_to 'Edit', edit_checkin_path(@checkin) %> |
+<%= link_to 'Back', checkins_path %>
